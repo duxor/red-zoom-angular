@@ -1,0 +1,6 @@
+/*
+ * Public API Surface of ngx-red-zoom
+ */
+export * from './lib/red-zoom.module';
+export { RedZoomDirective } from './lib/red-zoom.directive';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIuLi8uLi8uLi8uLi9wcm9qZWN0cy9uZ3gtcmVkLXpvb20vc3JjLyIsInNvdXJjZXMiOlsicHVibGljLWFwaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7R0FFRztBQUVILGNBQWMsdUJBQXVCLENBQUM7QUFDdEMsT0FBTyxFQUFFLGdCQUFnQixFQUFFLE1BQU0sMEJBQTBCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIvKlxuICogUHVibGljIEFQSSBTdXJmYWNlIG9mIG5neC1yZWQtem9vbVxuICovXG5cbmV4cG9ydCAqIGZyb20gJy4vbGliL3JlZC16b29tLm1vZHVsZSc7XG5leHBvcnQgeyBSZWRab29tRGlyZWN0aXZlIH0gZnJvbSAnLi9saWIvcmVkLXpvb20uZGlyZWN0aXZlJztcbiJdfQ==
