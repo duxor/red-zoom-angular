@@ -1,5 +1,5 @@
-import { ChangeDetectorRef, Component, HostBinding, ViewChild } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { ChangeDetectorRef, Component, HostBinding, ViewChild, inject } from '@angular/core';
+
 import { RedZoomDirective } from 'ngx-red-zoom';
 import { CarouselModule, SlidesOutputData } from 'ngx-owl-carousel-o';
 import { CodeComponent } from '../code/code.component';
@@ -9,13 +9,14 @@ import { CodeComponent } from '../code/code.component';
     templateUrl: './example-n07.component.html',
     styleUrls: ['./example-n07.component.scss'],
     imports: [
-        NgFor,
-        RedZoomDirective,
-        CarouselModule,
-        CodeComponent
-    ]
+    RedZoomDirective,
+    CarouselModule,
+    CodeComponent
+]
 })
 export class ExampleN07Component {
+    private cd = inject(ChangeDetectorRef);
+
     @HostBinding('class.example') classExample = true;
 
     @ViewChild(RedZoomDirective) redZoom!: RedZoomDirective;
@@ -37,8 +38,6 @@ export class ExampleN07Component {
     }
 
     dragging = false;
-
-    constructor(private cd: ChangeDetectorRef) { }
 
     dragged(event: {dragging: boolean; data: SlidesOutputData}): void {
         this.dragging = event.dragging;

@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
-@use '../../../node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+/* Owl Carousel styles are loaded via angular.json (prebuilt CSS) to avoid Sass @import deprecations in the library. */
 
 // site
 @use 'scss/common';

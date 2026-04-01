@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef, inject } from '@angular/core';
 import { Angulartics2GoogleAnalytics } from 'angulartics2';
 import packageJson from '../../../ngx-red-zoom/package.json';
 import { render } from 'github-buttons';
@@ -29,14 +29,12 @@ import { DocumentationComponent } from './documentation/documentation.component'
     ]
 })
 export class AppComponent implements OnInit {
+    private analytics = inject(Angulartics2GoogleAnalytics);
+
     @ViewChild('buttons', {read: ViewContainerRef, static: true}) buttons?: ViewContainerRef;
 
     version = packageJson.version;
     year = new Date().getFullYear();
-
-    constructor(
-        private analytics: Angulartics2GoogleAnalytics,
-    ) {}
 
     ngOnInit(): void {
         this.analytics.startTracking();

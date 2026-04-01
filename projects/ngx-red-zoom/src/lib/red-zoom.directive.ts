@@ -1,15 +1,4 @@
-import {
-    AfterContentInit,
-    Directive,
-    ElementRef,
-    Inject,
-    Input,
-    NgZone,
-    Renderer2,
-    OnChanges,
-    SimpleChanges,
-    HostBinding, OnDestroy, PLATFORM_ID
-} from '@angular/core';
+import { AfterContentInit, Directive, ElementRef, Input, NgZone, Renderer2, OnChanges, SimpleChanges, HostBinding, OnDestroy, PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RedZoomTemplate } from './red-zoom-template.class';
 import { RedZoomStatus } from './red-zoom-status.type';
@@ -36,6 +25,11 @@ interface Session {
     exportAs: 'redZoom'
 })
 export class RedZoomDirective implements AfterContentInit, OnChanges, OnDestroy {
+    private element = inject(ElementRef);
+    private renderer = inject(Renderer2);
+    private zone = inject(NgZone);
+    private platformId = inject(PLATFORM_ID);
+
     /* eslint-disable @angular-eslint/no-input-rename */
     @Input('src') @HostBinding('attr.src') src = '';
 
@@ -104,13 +98,6 @@ export class RedZoomDirective implements AfterContentInit, OnChanges, OnDestroy 
             this.onImageChangeStatusDistinct();
         };
     })();
-
-    constructor(
-        private element: ElementRef,
-        private renderer: Renderer2,
-        private zone: NgZone,
-        @Inject(PLATFORM_ID) private platformId: string,
-    ) { }
 
     listen(): void {
         const startEventName = {
