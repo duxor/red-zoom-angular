@@ -1,4 +1,4 @@
-import { AfterViewChecked, Component, ElementRef, Input, Renderer2, TemplateRef, ViewChild } from '@angular/core';
+import { AfterViewChecked, Component, ElementRef, Input, Renderer2, TemplateRef, ViewChild, inject } from '@angular/core';
 import hljs from 'highlight.js';
 
 @Component({
@@ -7,6 +7,8 @@ import hljs from 'highlight.js';
     styleUrls: ['./code.component.scss']
 })
 export class CodeComponent implements AfterViewChecked {
+    private renderer = inject(Renderer2);
+
     @Input() language!: string;
 
     @ViewChild('template') template!: TemplateRef<void>;
@@ -16,10 +18,6 @@ export class CodeComponent implements AfterViewChecked {
     code = '';
 
     value = '';
-
-    constructor(
-        private renderer: Renderer2,
-    ) { }
 
     ngAfterViewChecked(): void {
         const code = this.template.createEmbeddedView(void {}).rootNodes.reduce<string>((acc, node: Node) => node.textContent || '', '');

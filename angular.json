@@ -31,6 +31,7 @@
               "projects/demo/src/assets"
             ],
             "styles": [
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.css",
               "projects/demo/src/styles.scss",
               "node_modules/highlight.js/styles/github.css"
             ],
@@ -96,6 +97,7 @@
               "projects/demo/src/assets"
             ],
             "styles": [
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.css",
               "projects/demo/src/styles.scss"
             ],
             "scripts": []
