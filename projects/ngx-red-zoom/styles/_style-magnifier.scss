@@ -1,0 +1,6 @@
+@use './mixins/style-magnifier';
+
+
+.red-zoom--style--magnifier {
+    @include style-magnifier.red-zoom-style-magnifier();
+}

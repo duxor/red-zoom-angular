@@ -3,5 +3,8 @@
   "dest": "../../dist/ngx-red-zoom",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "assets": [
+    "./styles"
+  ]
 }
